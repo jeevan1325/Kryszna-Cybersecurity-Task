@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Braff Law - Car Accident Personal Injury Lawyers</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- MOBILE HEADER -->
+    <header class="mobile-header">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+      </button>
+
+      <div class="mobile-logo">
+        <img src="images/Brafflogo.svg" alt="Braff Law" />
+      </div>
+
+      <img src="images/phone.png" alt="call" class="phone-icon" />
+    </header>
+
+    <!-- MOBILE NAVBAR -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer" id="drawer">
+      <nav class="drawer-nav">
+        <div class="d-item" onclick="toggleD(this)">
+          <div class="d-link">About <i class="fa-solid fa-angle-down"></i></div>
+          <div class="d-sub">
+            <a href="#">Meet Our Team</a>
+            <a href="#">No Win No Fee</a>
+            <a href="#">Injury Claim Calculator</a>
+          </div>
+        </div>
+        <div class="d-item">
+          <a href="#" class="d-link no-arrow">Case Results</a>
+        </div>
+        <div class="d-item">
+          <a href="#" class="d-link no-arrow">Testimonials</a>
+        </div>
+        <div class="d-item" onclick="toggleD(this)">
+          <div class="d-link">
+            Practice Areas <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="d-sub">
+            <a href="#">Car Accidents</a><a href="#">Slip And Fall Accidents</a>
+            <a href="#">Motorcycle Accidents</a
+            ><a href="#">Pedestrian Accidents</a>
+            <a href="#">Bicycle Accidents</a><a href="#">Truck Accidents</a>
+            <a href="#">Traumatic Brain Injuries</a
+            ><a href="#">Spinal Cord Injury</a>
+            <a href="#">Rideshare Accidents</a><a href="#">Uber Accidents</a>
+            <a href="#">Lyft Accidents</a><a href="#">Waymo Accidents</a>
+            <a href="#">Dog Bites</a><a href="#">Wrongful Death</a>
+            <a href="#">Bus Accidents</a><a href="#">Hit and Run Accidents</a>
+          </div>
+        </div>
+        <div class="d-item" onclick="toggleD(this)">
+          <div class="d-link">
+            Consultation Office Locations <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="d-sub" style="background: rgba(0, 0, 0, 0.22)">
+            <div
+              class="d-acc-hd"
+              onclick="
+                event.stopPropagation();
+                toggleDA(this);
+              "
+            >
+              A &#8211; D <span class="d-acc-arr">&#9660;</span>
+            </div>
+            <div class="d-acc-bd">
+              <a href="#">Alameda</a><a href="#">Antioch</a
+              ><a href="#">Apple Valley</a><a href="#">Arcadia</a
+              ><a href="#">Bakersfield</a><a href="#">Baldwin Park</a
+              ><a href="#">Bellflower</a><a href="#">Burbank</a
+              ><a href="#">Compton</a><a href="#">Corona</a
+              ><a href="#">Downey</a>
+            </div>
+            <div
+              class="d-acc-hd"
+              onclick="
+                event.stopPropagation();
+                toggleDA(this);
+              "
+            >
+              E &#8211; H <span class="d-acc-arr">&#9660;</span>
+            </div>
+            <div class="d-acc-bd">
+              <a href="#">El Monte</a><a href="#">Fontana</a
+              ><a href="#">Fresno</a><a href="#">Garden Grove</a
+              ><a href="#">Glendale</a><a href="#">Hawthorne</a
+              ><a href="#">Hayward</a>
+            </div>
+            <div
+              class="d-acc-hd"
+              onclick="
+                event.stopPropagation();
+                toggleDA(this);
+              "
+            >
+              I &#8211; L <span class="d-acc-arr">&#9660;</span>
+            </div>
+            <div class="d-acc-bd">
+              <a href="#">Inglewood</a><a href="#">Irvine</a
+              ><a href="#">Lancaster</a><a href="#">Long Beach</a
+              ><a href="#">Los Angeles</a>
+            </div>
+            <div
+              class="d-acc-hd"
+              onclick="
+                event.stopPropagation();
+                toggleDA(this);
+              "
+            >
+              M &#8211; P <span class="d-acc-arr">&#9660;</span>
+            </div>
+            <div class="d-acc-bd">
+              <a href="#">Modesto</a><a href="#">Moreno Valley</a
+              ><a href="#">Oakland</a><a href="#">Ontario</a
+              ><a href="#">Orange</a><a href="#">Oxnard</a
+              ><a href="#">Palmdale</a><a href="#">Pasadena</a>
+            </div>
+            <div
+              class="d-acc-hd"
+              onclick="
+                event.stopPropagation();
+                toggleDA(this);
+              "
+            >
+              Q &#8211; T <span class="d-acc-arr">&#9660;</span>
+            </div>
+            <div class="d-acc-bd">
+              <a href="#">Rancho Cucamonga</a><a href="#">Riverside</a
+              ><a href="#">Sacramento</a><a href="#">San Bernardino</a
+              ><a href="#">San Diego</a><a href="#">San Jose</a
+              ><a href="#">Santa Ana</a><a href="#">Stockton</a
+              ><a href="#">Torrance</a>
+            </div>
+            <div
+              class="d-acc-hd"
+              onclick="
+                event.stopPropagation();
+                toggleDA(this);
+              "
+            >
+              U &#8211; Z <span class="d-acc-arr">&#9660;</span>
+            </div>
+            <div class="d-acc-bd">
+              <a href="#">Vallejo</a><a href="#">Victorville</a
+              ><a href="#">Visalia</a><a href="#">West Covina</a>
+            </div>
+          </div>
+        </div>
+        <div class="d-item">
+          <a href="#" class="d-link no-arrow">Articles</a>
+        </div>
+        <div class="d-item">
+          <a href="#" class="d-link no-arrow">Contact</a>
+        </div>
+        <div class="d-item">
+          <a href="#" class="d-link no-arrow"
+            >&#127474;&#127480; Espa&#241;ol</a
+          >
+        </div>
+      </nav>
+    </div>
+
+    <!-- DESKTOP HEADER -->
+    <div class="desktop-header">
+      <div class="top-bar">
+        <div class="top-bar-inner">
+          <a href="#" class="d-logo">
+            <img src="images/Brafflogo.svg" alt="Braff Law" />
+          </a>
+          <div class="top-bar-cta">
+            <span class="cta-text"
+              >Start Your FREE Case Consultation Today</span
+            >
+            <img style="margin-top: 8px" src="images/Vector.webp" alt="" />
+          </div>
+          <div class="top-bar-actions">
+            <a href="#" class="btn-outline">Get Free Legal Help Now</a>
+            <a href="tel:2133702483" class="btn-green-d">Call (213) 370-2483</a>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <div class="nav-inner">
+          <div class="nav-item">
+            <button class="nav-link">
+              About <i class="arrow-down fa-solid fa-angle-down"></i>
+            </button>
+            <div class="dropdown dropdown-simple">
+              <a href="#">Meet Our Team</a>
+              <a href="#">No Win No Fee</a>
+              <a href="#">Injury Claim Calculator</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="#" class="nav-link">Case Results</a>
+          </div>
+          <div class="nav-item">
+            <a href="#" class="nav-link">Testimonials</a>
+          </div>
+          <div class="nav-item">
+            <button class="nav-link">
+              Practice Areas <i class="arrow-down fa-solid fa-angle-down"></i>
+            </button>
+            <div class="dropdown dropdown-mega">
+              <div class="mega-grid">
+                <a href="#">Car Accidents</a
+                ><a href="#">Slip And Fall Accidents</a>
+                <a href="#">Motorcycle Accidents</a
+                ><a href="#">Pedestrian Accidents</a>
+                <a href="#">Bicycle Accidents</a><a href="#">Truck Accidents</a>
+                <a href="#">Traumatic Brain Injuries</a
+                ><a href="#">Spinal Cord Injury</a>
+                <a href="#">Rideshare Accidents</a
+                ><a href="#">Uber Accidents</a> <a href="#">Lyft Accidents</a
+                ><a href="#">Waymo Accidents</a> <a href="#">Dog Bites</a
+                ><a href="#">Wrongful Death</a> <a href="#">Bus Accidents</a
+                ><a href="#">Hit and Run Accidents</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item">
+            <button class="nav-link">
+              Consultation Office Locations
+              <i class="arrow-down fa-solid fa-angle-down"></i>
+            </button>
+            <div class="dropdown dropdown-accordion">
+              <div class="acc-group">
+                <div class="acc-header open" onclick="toggleAcc(this)">
+                  A &#8211; D <i class="acc-arrow">&#9650;</i>
+                </div>
+                <div class="acc-body open">
+                  <a href="#">Alameda</a><a href="#">Antioch</a
+                  ><a href="#">Apple Valley</a><a href="#">Arcadia</a
+                  ><a href="#">Bakersfield</a><a href="#">Baldwin Park</a
+                  ><a href="#">Bellflower</a><a href="#">Burbank</a
+                  ><a href="#">Compton</a><a href="#">Corona</a
+                  ><a href="#">Downey</a>
+                </div>
+              </div>
+              <div class="acc-group">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                  E &#8211; H <i class="acc-arrow">&#9660;</i>
+                </div>
+                <div class="acc-body">
+                  <a href="#">El Monte</a><a href="#">Fontana</a
+                  ><a href="#">Fresno</a><a href="#">Garden Grove</a
+                  ><a href="#">Glendale</a><a href="#">Hawthorne</a
+                  ><a href="#">Hayward</a>
+                </div>
+              </div>
+              <div class="acc-group">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                  I &#8211; L <i class="acc-arrow">&#9660;</i>
+                </div>
+                <div class="acc-body">
+                  <a href="#">Inglewood</a><a href="#">Irvine</a
+                  ><a href="#">Lancaster</a><a href="#">Long Beach</a
+                  ><a href="#">Los Angeles</a>
+                </div>
+              </div>
+              <div class="acc-group">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                  M &#8211; P <i class="acc-arrow">&#9660;</i>
+                </div>
+                <div class="acc-body">
+                  <a href="#">Modesto</a><a href="#">Moreno Valley</a
+                  ><a href="#">Oakland</a><a href="#">Ontario</a
+                  ><a href="#">Orange</a><a href="#">Oxnard</a
+                  ><a href="#">Palmdale</a><a href="#">Pasadena</a>
+                </div>
+              </div>
+              <div class="acc-group">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                  Q &#8211; T <i class="acc-arrow">&#9660;</i>
+                </div>
+                <div class="acc-body">
+                  <a href="#">Rancho Cucamonga</a><a href="#">Riverside</a
+                  ><a href="#">Sacramento</a><a href="#">San Bernardino</a
+                  ><a href="#">San Diego</a><a href="#">San Jose</a
+                  ><a href="#">Santa Ana</a><a href="#">Stockton</a
+                  ><a href="#">Torrance</a>
+                </div>
+              </div>
+              <div class="acc-group">
+                <div class="acc-header" onclick="toggleAcc(this)">
+                  U &#8211; Z <i class="acc-arrow">&#9660;</i>
+                </div>
+                <div class="acc-body">
+                  <a href="#">Vallejo</a><a href="#">Victorville</a
+                  ><a href="#">Visalia</a><a href="#">West Covina</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item"><a href="#" class="nav-link">Articles</a></div>
+          <div class="nav-item"><a href="#" class="nav-link">Contact</a></div>
+          <div style="display: flex; align-items: center" class="">
+            <img
+              style="width: 20px; height: 20px"
+              src="images/flag.svg"
+              alt=""
+            />
+            <a href="#" class="nav-link">Espa&#241;ol</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>
