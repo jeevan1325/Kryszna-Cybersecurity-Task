@@ -1,69 +1,92 @@
-/* ── Elements ───────────────────────── */
-const hamburger = document.getElementById("hamburger");
-const hamburgerIcon = document.getElementById("hamburger-icon");
-const drawer = document.getElementById("drawer");
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const icon = document.getElementById("hamburger-icon");
+  const drawer = document.getElementById("drawer");
+  const overlay = document.getElementById("drawerOverlay");
 
-/* ── Open / close drawer ────────────── */
-hamburger.addEventListener("click", function () {
-  const isOpen = drawer.classList.toggle("open");
-  if (isOpen) {
-    hamburgerIcon.classList.replace("fa-bars", "fa-xmark");
-    document.body.style.overflow = "hidden";
-  } else {
-    hamburgerIcon.classList.replace("fa-xmark", "fa-bars");
+  // Open / Close Menu
+  hamburger.addEventListener("click", () => {
+    const isOpen = drawer.classList.toggle("open");
+    overlay.classList.toggle("open");
+
+    icon.classList.toggle("fa-bars", !isOpen);
+    icon.classList.toggle("fa-xmark", isOpen);
+
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  });
+
+  // Close when clicking outside
+  overlay.addEventListener("click", () => {
+    drawer.classList.remove("open");
+    overlay.classList.remove("open");
+
+    icon.classList.add("fa-bars");
+    icon.classList.remove("fa-xmark");
+
     document.body.style.overflow = "";
-  }
+  });
 });
 
-/* ── Mobile main accordion ──────────── */
+
+// Mobile Accordion
 function toggleD(item) {
-  const isOpen = item.classList.contains("d-open");
-  item.parentElement.querySelectorAll(".d-item.d-open").forEach(function (el) {
+  const alreadyOpen = item.classList.contains("d-open");
+
+  document.querySelectorAll(".d-item").forEach(el => {
     el.classList.remove("d-open");
   });
-  if (!isOpen) item.classList.add("d-open");
-}
 
-/* ── Mobile nested location accordion ── */
-function toggleDA(hd) {
-  const bd = hd.nextElementSibling;
-  const isOpen = hd.classList.contains("da-open");
-  const parent = hd.parentElement;
-  parent.querySelectorAll(".d-acc-hd").forEach(function (h) {
-    h.classList.remove("da-open");
-  });
-  parent.querySelectorAll(".d-acc-bd").forEach(function (b) {
-    b.classList.remove("da-open");
-  });
-  if (!isOpen) {
-    hd.classList.add("da-open");
-    bd.classList.add("da-open");
+  if (!alreadyOpen) {
+    item.classList.add("d-open");
   }
 }
 
-/* ── Desktop location accordion ──────── */
+
+// Nested Accordion
+function toggleDA(header) {
+  const body = header.nextElementSibling;
+  const parent = header.parentElement;
+  const alreadyOpen = header.classList.contains("da-open");
+
+  // close all
+  parent.querySelectorAll(".d-acc-hd, .d-acc-bd").forEach(el => {
+    el.classList.remove("da-open");
+  });
+
+  // open clicked
+  if (!alreadyOpen) {
+    header.classList.add("da-open");
+    body.classList.add("da-open");
+  }
+}
+
+
+// Desktop Accordion
 function toggleAcc(header) {
   const body = header.nextElementSibling;
-  const isOpen = header.classList.contains("open");
-  const wrap = header.closest(".dropdown-accordion");
+  const wrapper = header.closest(".dropdown-accordion");
+  const alreadyOpen = header.classList.contains("open");
 
-  // close all first
-  wrap.querySelectorAll(".acc-header").forEach(function (h) {
+  // close all
+  wrapper.querySelectorAll(".acc-header").forEach(h => {
     h.classList.remove("open");
-    var arr = h.querySelector(".acc-arrow");
-    arr.classList.remove("fa-chevron-up");
-    arr.classList.add("fa-chevron-down");
+    const arrow = h.querySelector(".acc-arrow");
+    arrow.classList.remove("fa-chevron-up");
+    arrow.classList.add("fa-chevron-down");
   });
-  wrap.querySelectorAll(".acc-body").forEach(function (b) {
+
+  wrapper.querySelectorAll(".acc-body").forEach(b => {
     b.classList.remove("open");
   });
 
-  // open clicked one
-  if (!isOpen) {
+  // open clicked
+  if (!alreadyOpen) {
     header.classList.add("open");
-    var arr = header.querySelector(".acc-arrow");
-    arr.classList.remove("fa-chevron-down");
-    arr.classList.add("fa-chevron-up");
+
+    const arrow = header.querySelector(".acc-arrow");
+    arrow.classList.remove("fa-chevron-down");
+    arrow.classList.add("fa-chevron-up");
+
     body.classList.add("open");
   }
 }
